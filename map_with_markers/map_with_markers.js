@@ -1,15 +1,17 @@
-
+var map;
+var panorama;
   
   function initMap() {
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
             center: {lat: 30.565244, lng: -97.671010},
-            //center:{lat: 32.790492, lng: -96.810285}, //AAC
             zoom: 14
         });
+
+        var txstate = {lat: 30.569858, lng: -97.655918};
         var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), {
-              position: {lat: 30.569858, lng: -97.655918},
+              position: txstate,
               pov: {
                 heading: 34,
                 pitch: 10
@@ -67,18 +69,46 @@
             marker.setAnimation(google.maps.Animation.BOUNCE);
           }
         }
+
+        function move(){
+            panorama.getPosition()[0] += 0.00000001;
+            panorama.getPosition()[1] += 0.00000001;
+
+        map.setStreetView(panorama);
+        }
+
         
+
+        
+
+
+
+        
+      /* var location = google.maps.event.addListener(panorama, "visible_changed", function() {
+            map.setCenter(panorama.getPosition());
+        });*/
+    
+    
+    
+    
+
+
+
+   
+        
+
 
         
         
         
         
       }
+
       
       
       
       
-          document.onkeydown = checkKey;
+    document.onkeydown = checkKey;
 
     function checkKey(e) {
 
@@ -86,7 +116,13 @@
         
         if (e.keyCode == '38') {
             // up arrow
-            panorama = new google.maps.StreetViewPanorama(
+        /*var mapDiv = document.getElementById('map');
+
+        map = new google.maps.Map(mapDiv, {
+            center: {lat: 30.560619, lng: -97.688338},
+            zoom: 14
+        });
+         panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), {
               position: {lat: 30.560619, lng: -97.688338},
               pov: {
@@ -94,8 +130,13 @@
                 pitch: 10
               }
             });
-            
-            map.setStreetView(panorama);
+        map.setStreetView(panorama);*/
+        
+            panorama.getPosition()[0] += 0.00000001;
+            panorama.getPosition()[1] += 0.00000001;
+
+        map.setStreetView(panorama);
+             
             
         }
         else if (e.keyCode == '40') {
@@ -108,5 +149,10 @@
            // right arrow
         }
         
+        
+   
+        
 
 }
+ 
+
