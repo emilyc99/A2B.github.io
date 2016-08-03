@@ -5,12 +5,12 @@
       
 h3 {
     font-family: helvetica;
-    letter-spacing: 10px;
 
 }
 
 
 html, body {
+        font-family: helvetica;
         /*width: 1500px;*/
         width: 100%;
         height: 95%;
@@ -21,5 +21,19 @@ html, body {
     float: left;
     height: 90%;
     width: 50%;
+}
+
+#myModal{
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: 100px;
+    
+
+    
 }
       
