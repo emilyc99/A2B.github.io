@@ -1,6 +1,4 @@
-var map;
-var panorama;
-  
+ 
   function initMap() {
         var mapDiv = document.getElementById('map');
         var map = new google.maps.Map(mapDiv, {
@@ -18,7 +16,7 @@ var panorama;
               }
             });
         map.setStreetView(panorama);
-        
+       
         
         //point A
         //hard-coded as Texas State University right now
@@ -69,38 +67,6 @@ var panorama;
             marker.setAnimation(google.maps.Animation.BOUNCE);
           }
         }
-
-        function move(){
-            panorama.getPosition()[0] += 0.00000001;
-            panorama.getPosition()[1] += 0.00000001;
-
-        map.setStreetView(panorama);
-        }
-
-        
-
-        
-
-
-
-        
-      /* var location = google.maps.event.addListener(panorama, "visible_changed", function() {
-            map.setCenter(panorama.getPosition());
-        });*/
-    
-    
-    
-    
-
-
-
-   
-        
-
-
-        
-        
-        
         
       }
 
@@ -108,51 +74,7 @@ var panorama;
       
       
       
-    document.onkeydown = checkKey;
 
-    function checkKey(e) {
-
-        e = e || window.event;
-        
-        if (e.keyCode == '38') {
-            // up arrow
-        /*var mapDiv = document.getElementById('map');
-
-        map = new google.maps.Map(mapDiv, {
-            center: {lat: 30.560619, lng: -97.688338},
-            zoom: 14
-        });
-         panorama = new google.maps.StreetViewPanorama(
-            document.getElementById('pano'), {
-              position: {lat: 30.560619, lng: -97.688338},
-              pov: {
-                heading: 34,
-                pitch: 10
-              }
-            });
-        map.setStreetView(panorama);*/
-        
-            panorama.getPosition()[0] += 0.00000001;
-            panorama.getPosition()[1] += 0.00000001;
-
-        map.setStreetView(panorama);
-             
-            
-        }
-        else if (e.keyCode == '40') {
-            // down arrow
-        }
-        else if (e.keyCode == '37') {
-           // left arrow
-        }
-        else if (e.keyCode == '39') {
-           // right arrow
-        }
         
         
-   
-        
-
-}
- 
 
