@@ -46,8 +46,28 @@ function initMap() {
 
     // Add a listener for the click event
     map.addListener('position_change', addLatLng);
+    
+    map.addListener('position_change', endGame);
   }
   // Handles click events on a map, and adds a new point to the Polyline.
+  
+function endGame(event){
+    var end = {lat: 30.560619,
+        lng: -97.688338};
+        
+    /*var lat = panorama.getPosition().lat();
+    var lng = panorama.getPosition().lng();
+    var lat2 = end.lat;
+    var lng2 = end.lng;
+    
+    function approximatelyEqual(a, b, epsilon){
+        return Math.abs(A-B) <= A < B ? B = A * epsilon;
+        var A = Math.abs(a), B = Math.abs(B);
+    }*/
+    
+    if(approximatelyEqual(lat, lat2, 0.0005) && approximatelyEqual(lng, ln2, 0.0005))
+        window.alert("end game!");
+}
 
 function addLatLng(event) {
   var path = poly.getPath();
@@ -105,12 +125,11 @@ function addLatLng(event) {
   function info_B() {
     infowindow_B.open(map, pointB);
   }
-  
-  if(panorama.getPosition() == pointB.getPosition())
-        window.alert("end game!");
+ 
 
 
 
 
 }
 google.maps.event.addDomListener(window, "load", initMap);
+
