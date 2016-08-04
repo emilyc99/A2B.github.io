@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <title>A2B</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="A2B.css"></link>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="A2B.css"></link>
+        <script type="text/javascript" src="pegman_lines.js"></script>
 </head>
 <body>
 
@@ -29,7 +30,52 @@
       </ul>
     </div>
   </div>
+  
+  
 </nav>
+
+<div id="map"></div>
+<div id="pano"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhOqIGkGPLTFfBdOJnb2YsY04_JnPXy4c&callback=initMap"> 
+    </script>
+    <script>
+    $(document).ready(function () {
+            $('#myModal').modal('show');
+        });
+    </script>
+    <div class="container">
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">A to B</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+          <b>How to Play:</b><br>
+          1. Click on the panorama view <br>
+          2. Navigate with arrow keys <br>
+          3. Find the fastest way from Point A to Point B!
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Ready!</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    
+    
+  
+</div>
 
 
 
