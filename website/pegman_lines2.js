@@ -14,7 +14,7 @@ function initMap() {
 
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
-        position: {lat:30.55670, lng: -97.69154},
+        position: {lat: 30.56621, lng: -97.68937},
         pov: {
           heading: 34,
           pitch: 10
@@ -61,10 +61,10 @@ function addLatLng(event) {
   //var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
-      position: {lat: 30.56621, lng: -97.68937},
+      position:  {lat:30.55670, lng: -97.69154},
       map: map,
       title: 'outlet',
-      label: 'B',
+      label: 'A',
      // animation: google.maps.Animation.DROP
     });
     var contentString_A = '<h5>round rock premium outlets</h5>';
@@ -83,19 +83,25 @@ function addLatLng(event) {
   //hard-coded as H-E-B right now
   if (!pointB) {
     pointB = new google.maps.Marker({
-      position: {lat:30.55670, lng: -97.69154},
+      position: {lat: 30.56621, lng: -97.68937},
       map: map,
       title: 'ikea',
-      label: 'A',
+      label: 'B',
       //animation: google.maps.Animation.DROP
     });
-    var contentString_B = '<h5>ikea</h5>';
+    var contentString_B = "Success! You finished this level! ";
+    var nextLevel = "Next Level";
+    var contentstring = contentString_B + nextLevel.link("A2B_game3.html");
     var infowindow_B = new google.maps.InfoWindow({
-      content: contentString_B
+      content: contentstring
     });
     pointB.addListener('click', info_B);
   }
-
+  
+  if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 130) {
+    infowindow_B.open(map, pointB);
+  }
+    
   function info_B() {
     infowindow_B.open(map, pointB);
   }

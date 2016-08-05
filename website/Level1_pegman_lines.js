@@ -14,8 +14,8 @@ function initMap() {
     });
 
     var txstate = {
-      lat: 30.569858,
-      lng: -97.655918
+      lat: 30.56621,
+      lng: -97.68937
     };
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -93,17 +93,12 @@ function addLatLng(event) {
       label: 'B',
       //animation: google.maps.Animation.DROP
     });
-    var contentString_B = "Success! You finished this level! ";
-    var nextLevel = "Next Level";
-    var contentstring = contentString_B + nextLevel.link("A2B_game2.html");
+    var contentString_B = '<h5>h-e-b</h5>';
     var infowindow_B = new google.maps.InfoWindow({
-      content: contentstring
+      content: contentString_B
     });
     pointB.addListener('click', info_B);
   }
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 15) {
-    infowindow_B.open(map, pointB);
-  } 
 
   function info_B() {
     infowindow_B.open(map, pointB);
@@ -116,8 +111,6 @@ function addLatLng(event) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
- //if (latLng.panorama == (latLng.pointB){
-   //  alert("I am an alert box!");}
-}
 
+}
 google.maps.event.addDomListener(window, "load", initMap);
