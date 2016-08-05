@@ -76,6 +76,7 @@ html, body {
     height: 90%;
     width: 50%;
 }
+<<<<<<< HEAD
 
 #myModal{
 
@@ -85,9 +86,24 @@ html, body {
     left: 0;
     right: 0;
 
+=======
+
+#myModal{
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+>>>>>>> 91f1294461053e8baaf2bd7ddaa293b7fd52c905
     margin: 100px;
     
 
     
 }
+<<<<<<< HEAD
       
+=======
+      
+>>>>>>> 91f1294461053e8baaf2bd7ddaa293b7fd52c905

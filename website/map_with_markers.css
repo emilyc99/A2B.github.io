@@ -3,15 +3,11 @@
         height: 400px;
       }
       
-h3 {
-    font-family: helvetica;
 
-}
 
 
 html, body {
-        font-family: helvetica;
-        /*width: 1500px;*/
+
         width: 100%;
         height: 95%;
         margin: 0;
