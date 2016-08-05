@@ -7,19 +7,19 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-        lat: 30.565244,
-        lng: -97.671010
+       lat: 48.859297,
+       lng: 2.292874
       },
-      zoom: 14
+      zoom: 15
     });
 
-    var txstate = {
-      lat: 30.569858,
-      lng: -97.655918
-    };
+    
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
-        position: txstate,
+        position: {
+            lat: 48.859297,
+            lng: 2.292874
+        },
         pov: {
           heading: 34,
           pitch: 10
@@ -55,20 +55,20 @@ function addLatLng(event) {
   path.push(event.latLng);
 
   //point A
-  //hard-coded as Texas State University right now
+  //hard-coded as Tour Eiffel right now
   var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 30.567989,
-        lng: -97.655153
+        lat: 48.859297,
+        lng:  2.292874
       },
       map: map,
-      title: 'tx state',
+      title: 'Tour Eiffel',
       label: 'A',
      // animation: google.maps.Animation.DROP
     });
-    var contentString_A = '<h5>texas state university at round rock</h5>';
+    var contentString_A = '<h5>Tour Eiffel</h5>';
     var infowindow_A = new google.maps.InfoWindow({
       content: contentString_A
     });
@@ -81,19 +81,19 @@ function addLatLng(event) {
   }
 
   //point B
-  //hard-coded as H-E-B right now
+  //hard-coded as Grand Palais right now
   if (!pointB) {
-    var pointB = new google.maps.Marker({
+    pointB = new google.maps.Marker({
       position: {
-        lat: 30.560619,
-        lng: -97.688338
+        lat: 48.866134,
+        lng: 2.310288
       },
       map: map,
-      title: 'heb',
+      title: 'Grand Palais',
       label: 'B',
       //animation: google.maps.Animation.DROP
     });
-    var contentString_B = '<h5>h-e-b</h5>';
+    var contentString_B = '<h5>Grand Palais</h5>';
     var infowindow_B = new google.maps.InfoWindow({
       content: contentString_B
     });
@@ -111,8 +111,6 @@ function addLatLng(event) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
- //if (latLng.panorama == (latLng.pointB){
-   //  alert("I am an alert box!");}
-}
 
+}
 google.maps.event.addDomListener(window, "load", initMap);
