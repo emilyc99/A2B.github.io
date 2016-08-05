@@ -93,9 +93,11 @@ function addLatLng(event) {
       label: 'B',
       //animation: google.maps.Animation.DROP
     });
-    var contentString_B = '<h5>h-e-b</h5>';
+    var contentString_B = "Success! You finished this level! ";
+    var nextLevel = "Next Level";
+    var contentstring = contentString_B + nextLevel.link("A2B_game2.html");
     var infowindow_B = new google.maps.InfoWindow({
-      content: contentString_B
+      content: contentstring
     });
     pointB.addListener('click', info_B);
   }
