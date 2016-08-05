@@ -65,8 +65,8 @@ function addLatLng(event) {
       },
       map: map,
       title: 'tx state',
-      label: 'A',
-     // animation: google.maps.Animation.DROP
+      icon: image,
+      animation: google.maps.Animation.DROP
     });
     var contentString_A = '<h5>texas state university at round rock</h5>';
     var infowindow_A = new google.maps.InfoWindow({
@@ -90,8 +90,8 @@ function addLatLng(event) {
       },
       map: map,
       title: 'heb',
-      label: 'B',
-      //animation: google.maps.Animation.DROP
+      icon: image,
+      animation: google.maps.Animation.DROP
     });
     var contentString_B = '<h5>h-e-b</h5>';
     var infowindow_B = new google.maps.InfoWindow({
@@ -99,9 +99,6 @@ function addLatLng(event) {
     });
     pointB.addListener('click', info_B);
   }
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 15) {
-    infowindow_B.open(map, pointB);
-  } 
 
   function info_B() {
     infowindow_B.open(map, pointB);
