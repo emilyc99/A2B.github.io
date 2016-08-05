@@ -7,19 +7,19 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-        lat: 38.89865,
-        lng: -77.02463
+       lat: 38.89865,
+       lng: -77.02463
       },
-      zoom: 14
+      zoom: 15
     });
 
-    var txstate = {
-      lat: 38.89865,
-      lng: -77.02463
-    };
+    
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
-        position: txstate,
+        position: {
+            lat: 38.89865,
+            lng: -77.02463
+        },
         pov: {
           heading: 34,
           pitch: 10
@@ -61,14 +61,14 @@ function addLatLng(event) {
     pointA = new google.maps.Marker({
       position: {
         lat: 38.89865,
-        lng: -77.02463
+        lng:  -77.02463
       },
       map: map,
       title: 'mlk jr memorial library',
       label: 'A',
      // animation: google.maps.Animation.DROP
     });
-    var contentString_A = 'mlk jr memorial library';
+    var contentString_A = '<h5>Tour Eiffel</h5>';
     var infowindow_A = new google.maps.InfoWindow({
       content: contentString_A
     });
@@ -81,29 +81,24 @@ function addLatLng(event) {
   }
 
   //point B
-  //hard-coded as smithsonian castle right now
+  //hard-coded as Grand Palais right now
   if (!pointB) {
-     pointB = new google.maps.Marker({
+    pointB = new google.maps.Marker({
       position: {
         lat: 38.88878,
         lng: -77.02596
       },
       map: map,
-      title: 'smithsonian castle',
+      title: 'Grand Palais',
       label: 'B',
       //animation: google.maps.Animation.DROP
     });
-    var contentString_B = "Success! You finished this level! ";
-    var nextLevel = "Next Level";
-    var contentstring = contentString_B + nextLevel.link("A2B_game10.html");
+    var contentString_B = '<h5>Grand Palais</h5>';
     var infowindow_B = new google.maps.InfoWindow({
-      content: contentstring
+      content: contentString_B
     });
     pointB.addListener('click', info_B);
   }
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 15) {
-    infowindow_B.open(map, pointB);
-  } 
 
   function info_B() {
     infowindow_B.open(map, pointB);

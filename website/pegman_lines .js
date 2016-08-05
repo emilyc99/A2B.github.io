@@ -7,15 +7,15 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-        lat: 38.89865,
-        lng: -77.02463
+        lat: 30.565244,
+        lng: -97.671010
       },
       zoom: 14
     });
 
     var txstate = {
-      lat: 38.89865,
-      lng: -77.02463
+      lat: 30.569858,
+      lng: -97.655918
     };
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -55,20 +55,20 @@ function addLatLng(event) {
   path.push(event.latLng);
 
   //point A
-  //hard-coded as mlk jr memorial library right now
+  //hard-coded as Texas State University right now
   var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 38.89865,
-        lng: -77.02463
+        lat: 30.567989,
+        lng: -97.655153
       },
       map: map,
-      title: 'mlk jr memorial library',
+      title: 'tx state',
       label: 'A',
      // animation: google.maps.Animation.DROP
     });
-    var contentString_A = 'mlk jr memorial library';
+    var contentString_A = '<h5>texas state university at round rock</h5>';
     var infowindow_A = new google.maps.InfoWindow({
       content: contentString_A
     });
@@ -81,21 +81,21 @@ function addLatLng(event) {
   }
 
   //point B
-  //hard-coded as smithsonian castle right now
+  //hard-coded as H-E-B right now
   if (!pointB) {
-     pointB = new google.maps.Marker({
+    var pointB = new google.maps.Marker({
       position: {
-        lat: 38.88878,
-        lng: -77.02596
+        lat: 30.560619,
+        lng: -97.688338
       },
       map: map,
-      title: 'smithsonian castle',
+      title: 'heb',
       label: 'B',
       //animation: google.maps.Animation.DROP
     });
     var contentString_B = "Success! You finished this level! ";
     var nextLevel = "Next Level";
-    var contentstring = contentString_B + nextLevel.link("A2B_game10.html");
+    var contentstring = contentString_B + nextLevel.link("A2B_game2.html");
     var infowindow_B = new google.maps.InfoWindow({
       content: contentstring
     });
