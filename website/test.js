@@ -7,19 +7,19 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-       lat: 30.523959,
+        lat: 30.523959,
        lng: -97.631829
       },
       zoom: 14
     });
 
-    
+    var txstate = {
+      lat: 30.519068,
+      lng: -97.652183
+    };
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
-        position: {
-            lat: 30.508255,
-            lng: -97.678896
-        },
+        position: txstate,
         pov: {
           heading: 34,
           pitch: 10
@@ -55,20 +55,20 @@ function addLatLng(event) {
   path.push(event.latLng);
 
   //point A
-  //hard-coded as Torchy's Tacos right now
+  //hard-coded as Texas State University right now
   var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 30.508255,
-        lng: -97.678896
+        lat: 30.519068,
+        lng: -97.652183
       },
       map: map,
-      title: 'torchys tacos',
+      title: 'tx state',
       label: 'A',
      // animation: google.maps.Animation.DROP
     });
-    var contentString_A = '<h5>torchys tacos</h5>';
+    var contentString_A = '<h5>texas state university at round rock</h5>';
     var infowindow_A = new google.maps.InfoWindow({
       content: contentString_A
     });
@@ -81,29 +81,30 @@ function addLatLng(event) {
   }
 
   //point B
-  //hard-coded as Dell Diamond right now
+  //hard-coded as H-E-B right now
   if (!pointB) {
-    pointB = new google.maps.Marker({
+    var pointB = new google.maps.Marker({
       position: {
         lat: 30.525852,
         lng: -97.629517
       },
       map: map,
-      title: 'dell diamond',
+      title: 'heb',
       label: 'B',
       //animation: google.maps.Animation.DROP
     });
     var contentString_B = "Success! You finished this level! ";
     var nextLevel = "Next Level";
-    var contentstring = contentString_B + nextLevel.link("A2B_game4.html");
+    var contentstring = contentString_B + nextLevel.link("A2B_game3.html");
     var infowindow_B = new google.maps.InfoWindow({
       content: contentstring
     });
- 
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 50) {
+    pointB.addListener('click', info_B);
+  }
+   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 25) {
     infowindow_B.open(map, pointB);
   } 
-  
+
   function info_B() {
     infowindow_B.open(map, pointB);
   }
@@ -115,6 +116,8 @@ function addLatLng(event) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
-
+ //if (latLng.panorama == (latLng.pointB){
+   //  alert("I am an alert box!");}
 }
+
 google.maps.event.addDomListener(window, "load", initMap);
