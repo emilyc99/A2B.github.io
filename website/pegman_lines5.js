@@ -7,8 +7,8 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-       lat: 38.89768,
-       lng: -77.03648
+       lat: 38.900298,
+       lng: -77.036598
       },
       zoom: 15
     });
@@ -17,8 +17,8 @@ function initMap() {
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
         position: {
-            lat: 38.89768,
-            lng: -77.03648
+            lat: 38.900298,
+            lng: -77.036598
         },
         pov: {
           heading: 34,
@@ -60,8 +60,8 @@ function addLatLng(event) {
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 38.89768,
-        lng: -77.03648
+        lat: 38.900298,
+        lng: -77.036598
       },
       map: map,
       title: 'White House',
