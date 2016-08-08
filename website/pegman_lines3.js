@@ -99,8 +99,7 @@ function addLatLng(event) {
     var infowindow_B = new google.maps.InfoWindow({
       content: contentstring
     });
-    pointB.addListener('click', info_B);
-  }
+ 
    if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 50) {
     infowindow_B.open(map, pointB);
   } 

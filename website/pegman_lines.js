@@ -95,13 +95,13 @@ function addLatLng(event) {
     });
     var contentString_B = "Success! You finished this level! ";
     var nextLevel = "Next Level";
-    var contentstring = contentString_B + nextLevel.link("A2B_game2.html");
+    var contentstring = contentString_B + nextLevel.link("A2B_game3.html");
     var infowindow_B = new google.maps.InfoWindow({
       content: contentstring
     });
     pointB.addListener('click', info_B);
   }
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 15) {
+   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 25) {
     infowindow_B.open(map, pointB);
   } 
 
