@@ -7,15 +7,15 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-        lat: 38.89865,
-        lng: -77.02463
+        lat: 51.501005,
+        lng: -0.124950
       },
       zoom: 14
     });
 
     var txstate = {
-      lat: 38.89865,
-      lng: -77.02463
+      lat: 51.501005,
+      lng: -0.124950
     };
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -55,13 +55,13 @@ function addLatLng(event) {
   path.push(event.latLng);
 
   //point A
-  //hard-coded as mlk jr memorial library right now
+  //hard-coded as Big Ben right now
   var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 38.89865,
-        lng: -77.02463
+        lat: 51.501005,
+        lng: -0.124950
       },
       map: map,
       title: 'mlk jr memorial library',
@@ -81,12 +81,12 @@ function addLatLng(event) {
   }
 
   //point B
-  //hard-coded as smithsonian castle right now
+  //hard-coded as Buckingham Palace right now
   if (!pointB) {
      pointB = new google.maps.Marker({
       position: {
-        lat: 38.88878,
-        lng: -77.02596
+        lat: 51.502059,
+        lng: -0.140038
       },
       map: map,
       title: 'smithsonian castle',
