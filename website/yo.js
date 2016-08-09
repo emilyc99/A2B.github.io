@@ -1,19 +1,19 @@
   //point B
-  //hard-coded as UT Tower
+  //hard-coded as St. Paul's Cathedral
   if (!pointB) {
     pointB = new google.maps.Marker({
       position: {
-        lat: 38.88878,
-        lng: -77.02596
+        lat: 51.513365,
+        lng: -0.098571
       },
       map: map,
-      title: 'University of Texas Tower',
+      title: 'St. Paul's Cathedral,
       label: 'B',
       //animation: google.maps.Animation.DROP
   });}
         var contentString_B = "Success! You finished this level! ";
         var nextLevel = "Next Level";
-        var contentstring = contentString_B + nextLevel.link("A2B_game5.html");
+        var contentstring = contentString_B + nextLevel.link("A2B_game8.html");
         var infowindow_B = new google.maps.InfoWindow({
             content: contentstring
         });
