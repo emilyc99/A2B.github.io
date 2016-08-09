@@ -101,6 +101,9 @@ function addLatLng(event) {
     });
     pointB.addListener('click', info_B);
   }
+     console.log (pointB.getPosition().toString());
+   console.log (event.latLng.toString());
+   console.log((google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng).toString()));
    if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 25) {
     infowindow_B.open(map, pointB);
   } 
