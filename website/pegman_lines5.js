@@ -7,8 +7,8 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-       lat: 38.89768,
-       lng: -77.03648
+       lat: 38.900298,
+       lng: -77.036598
       },
       zoom: 15
     });
@@ -17,8 +17,8 @@ function initMap() {
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
         position: {
-            lat: 38.89768,
-            lng: -77.03648
+            lat: 38.900298,
+            lng: -77.036598
         },
         pov: {
           heading: 34,
@@ -60,8 +60,8 @@ function addLatLng(event) {
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 38.89768,
-        lng: -77.03648
+        lat: 38.900298,
+        lng: -77.036598
       },
       map: map,
       title: 'White House',
@@ -92,18 +92,21 @@ function addLatLng(event) {
       title: 'Smithsonian National Museum of Natural History',
       label: 'B',
       //animation: google.maps.Animation.DROP
-    });
+  });}
         var contentString_B = "Success! You finished this level! ";
         var nextLevel = "Next Level";
-        var contentstring = contentString_B + nextLevel.link("A2B_game2.html");
+        var contentstring = contentString_B + nextLevel.link("A2B_game9.html");
         var infowindow_B = new google.maps.InfoWindow({
             content: contentstring
         });
     pointB.addListener('click', info_B);
-  }
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 125) {
+  
+   console.log (pointB.getPosition().toString());
+   console.log (event.latLng.toString());
+   console.log((google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng).toString()));
+   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 125.0) {
     infowindow_B.open(map, pointB);
-
+   }
   function info_B() {
     infowindow_B.open(map, pointB);
   }
@@ -116,6 +119,5 @@ function addLatLng(event) {
     }
   }
 
-}
 }
 google.maps.event.addDomListener(window, "load", initMap);

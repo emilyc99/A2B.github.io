@@ -2,7 +2,7 @@ body {
     font: 20px "Montserrat", sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
-    background-color: #1abc9c; /* Green */
+    background-color: /*#1abc9c;*/ #00ced1; /* Green */
     color: #ffffff;
 }
 
@@ -37,8 +37,8 @@ p {font-size: 16px;
 
 
 .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 13px;
+    padding-bottom: 13px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
@@ -47,13 +47,14 @@ p {font-size: 16px;
 }
 
 .navbar-nav li a:hover {
-    color: #1abc9c !important;
+    color: /*#1abc9c*/ #00ced1 !important;
 }
 
 
 
 p {font-size: 16px;}
 
+.margin {margin-top: 45px;}
 .margin {margin-bottom: 45px;}
 
 #map {

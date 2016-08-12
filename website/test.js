@@ -7,15 +7,15 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-        lat: 51.501005,
-        lng: -0.124950
+        lat: 30.523959,
+       lng: -97.631829
       },
       zoom: 14
     });
 
     var txstate = {
-      lat: 51.501005,
-      lng: -0.124950
+      lat: 30.519068,
+      lng: -97.652183
     };
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -55,20 +55,20 @@ function addLatLng(event) {
   path.push(event.latLng);
 
   //point A
-  //hard-coded as Big Ben right now
+  //hard-coded as Texas State University right now
   var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 51.501005,
-        lng: -0.124950
+        lat: 30.519068,
+        lng: -97.652183
       },
       map: map,
-      title: 'mlk jr memorial library',
+      title: 'tx state',
       label: 'A',
      // animation: google.maps.Animation.DROP
     });
-    var contentString_A = 'mlk jr memorial library';
+    var contentString_A = '<h5>texas state university at round rock</h5>';
     var infowindow_A = new google.maps.InfoWindow({
       content: contentString_A
     });
@@ -80,33 +80,31 @@ function addLatLng(event) {
     infowindow_A.open(map, pointA);
   }
 
-   //point B
-  //hard-coded as UT Tower
+  //point B
+  //hard-coded as H-E-B right now
   if (!pointB) {
-    pointB = new google.maps.Marker({
+    var pointB = new google.maps.Marker({
       position: {
-        lat: 51.502059,
-        lng: -0.140038
+        lat: 30.525852,
+        lng: -97.629517
       },
       map: map,
-      title: 'Buckingham Palace',
+      title: 'heb',
       label: 'B',
       //animation: google.maps.Animation.DROP
-  });}
-        var contentString_B = "Success! You finished this level! ";
-        var nextLevel = "Next Level";
-        var contentstring = contentString_B + nextLevel.link("A2B_game10.html");
-        var infowindow_B = new google.maps.InfoWindow({
-            content: contentstring
-        });
+    });
+    var contentString_B = "Success! You finished this level! ";
+    var nextLevel = "Next Level";
+    var contentstring = contentString_B + nextLevel.link("A2B_game3.html");
+    var infowindow_B = new google.maps.InfoWindow({
+      content: contentstring
+    });
     pointB.addListener('click', info_B);
-  
-   console.log (pointB.getPosition().toString());
-   console.log (event.latLng.toString());
-   console.log((google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng).toString()));
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 145.0) {
+  }
+   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 25) {
     infowindow_B.open(map, pointB);
-   }
+  } 
+
   function info_B() {
     infowindow_B.open(map, pointB);
   }
@@ -118,6 +116,8 @@ function addLatLng(event) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
-
+ //if (latLng.panorama == (latLng.pointB){
+   //  alert("I am an alert box!");}
 }
+
 google.maps.event.addDomListener(window, "load", initMap);

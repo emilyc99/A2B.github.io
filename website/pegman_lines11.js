@@ -7,15 +7,15 @@ function initMap() {
     var mapDiv = document.getElementById('map');
     map = new google.maps.Map(mapDiv, {
       center: {
-        lat: 30.565244,
-        lng: -97.671010
+        lat: 51.512590,
+       lng:   -0.121373
       },
       zoom: 14
     });
 
     var txstate = {
-      lat: 30.569858,
-      lng: -97.655918
+      lat:  51.512590,
+      lng:   -0.121373
     };
     var panorama = new google.maps.StreetViewPanorama(
       document.getElementById('pano'), {
@@ -55,16 +55,16 @@ function addLatLng(event) {
   path.push(event.latLng);
 
   //point A
-  //hard-coded as Texas State University right now
+  //hard-coded as Royal Opera House right now
   var image = "https://upload.wikimedia.org/wikipedia/commons/7/73/Farm-Fresh_star.png"; //STAR
   if (!pointA) {
     pointA = new google.maps.Marker({
       position: {
-        lat: 30.567989,
-        lng: -97.655153
+        lat: 51.512590,
+        lng:   -0.121373
       },
       map: map,
-      title: 'tx state',
+      title: 'Royal Opera House',
       label: 'A',
      // animation: google.maps.Animation.DROP
     });
@@ -81,27 +81,27 @@ function addLatLng(event) {
   }
 
   //point B
-  //hard-coded as H-E-B right now
+  //hard-coded as ST. PAULS cathedral right now
   if (!pointB) {
     var pointB = new google.maps.Marker({
       position: {
-        lat: 30.560619,
-        lng: -97.688338
+        lat: 51.513365,
+        lng: -0.098571
       },
       map: map,
-      title: 'heb',
+      title: 'St. Pauls Cathedral',
       label: 'B',
       //animation: google.maps.Animation.DROP
-    });
+  });
     var contentString_B = "Success! You finished this level! ";
     var nextLevel = "Next Level";
-    var contentstring = contentString_B + nextLevel.link("A2B_game2.html");
+    var contentstring = contentString_B + nextLevel.link("A2B_game8.html");
     var infowindow_B = new google.maps.InfoWindow({
       content: contentstring
     });
     pointB.addListener('click', info_B);
   }
-   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 15) {
+   if (google.maps.geometry.spherical.computeDistanceBetween(pointB.getPosition(), event.latLng) < 125) {
     infowindow_B.open(map, pointB);
   } 
 
@@ -116,6 +116,8 @@ function addLatLng(event) {
       marker.setAnimation(google.maps.Animation.BOUNCE);
     }
   }
-
+ //if (latLng.panorama == (latLng.pointB){
+   //  alert("I am an alert box!");}
 }
+
 google.maps.event.addDomListener(window, "load", initMap);
